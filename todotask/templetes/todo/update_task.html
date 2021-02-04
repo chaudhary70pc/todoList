@@ -1,0 +1,44 @@
+{% extends 'todo/base.html' %}
+
+
+{% comment %} {% block content %}
+<div class="center-column">
+    <form method="POST" action="">
+	   {% csrf_token %}
+
+	   {{form}}
+	   <input class="btn btn-info" type="submit" name="Update Task">
+
+   </form>
+</div>
+{% endblock content %} {% endcomment %}
+
+
+{% block content %}
+<div class="center-column">
+   
+     <form method="POST" action="">
+      {% csrf_token %} 
+      <div class="container">
+      <div class="form-group row"> 
+      <label class="col-sm-2 col-form-label">Task:</label>  
+      <div class="col-sm-8">  
+      {{ form.title }}  
+      </div>  
+     </div>
+     </div>
+       
+       <div class="container">
+       <div class="form-check row">
+        <label class="form-check-label" for="exampleCheck1">Complete:</label>
+        <div class="col-sm-4">  
+         {{ form.complete }}  
+      </div>
+     </div>
+     </div>
+     
+  <input class="btn btn-warning" type="submit" name="Update Task">
+
+ </form>
+</div>
+  {% endblock content %}
